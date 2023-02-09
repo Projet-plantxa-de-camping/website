@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Relevés mesures{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper {  max-width: 600px; width: 100%; font: 18px/1.5 sans-serif; }
+</style>
+<div class="container">
+    <div class="row mb-3 mt-5">
+        <div class="col example-wrapper">
+            {{ render_chart(chart1) }} {# ajout du graphique chart1 #}
+        </div>
+        <div class="col example-wrapper">
+            {{ render_chart(chart2) }} {# ajout du graphique chart2 #}
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row mb-3 mt-5">
+            <div class="col example-wrapper">
+                {{ render_chart(chart3) }} {# ajout du graphique chart3 #}
+            </div>
+            <div class="col example-wrapper">
+                {{ render_chart(chart4) }} {# ajout du graphique chart4 #}
+            </div>
+        </div>
+
+</div>
+{% endblock %}

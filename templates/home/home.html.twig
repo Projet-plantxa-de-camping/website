@@ -1,0 +1,245 @@
+{% extends 'base.html.twig' %}
+{% block title %}Accueil{% endblock %}
+
+
+{% block body %}
+
+{% if not app.user %}
+    <h1>Egun on</h1>
+
+    <p>Veuillez vous connecter pour accéder au site.</p>
+    <a href="{{ path('security_login') }}" class="btn btn-secondary" >Connexion</button></a>
+
+
+{% else %}
+    <h1>Egun on</h1>
+      <link rel="stylesheet" href="{{ asset('css/home.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+<link rel="stylesheet" type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+<div class="grey-bg container-fluid">
+    <section id="minimal-statistics">
+        <div class="row">
+            <div class="col-12 mt-3 mb-1">
+                <h4 class="text-uppercase">Informations</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <i class="fa fa-cutlery primary font-large-2 float-left"></i>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3>278</h3>
+                                    <span>Nombre de Cuissons</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <i class="icon-speech warning font-large-2 float-left"></i>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3>156</h3>
+                                    <span>Commentaires</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <i class="fa fa-user success font-large-2 float-left"></i>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3>195</h3>
+                                    <span>Nombres d'utilisateurs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <i class="fa fa-knife danger font-large-2 float-left"></i>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3>0</h3>
+                                    <span>Plantxa Libre</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <i class="fa fa-shopping-cart danger font-large-2 float-left"></i>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3>3</h3>
+                                    <span>Nombres de Plantxa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <i class="fa fa-home primary font-large-2 float-left"></i>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3>1</h3>
+                                    <span>Nombres de Camping</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <i class="icon-pointer danger font-large-2 float-left"></i>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3>423</h3>
+                                    <span>Nombres de Visites</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <i class="icon-graph success font-large-2 float-left"></i>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3>95 %</h3>
+                                    <span>Recommandes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <div class="container d-flex justify-content-center mt-100 mb-100">
+          <div class="row">
+              <div class="col-md-12">
+
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title"> Commentaires récents</h4>
+                          <h6 class="card-subtitle">Dernière selection des commentaires des utilisateurs</h6> </div>
+
+                      <div class="comment-widgets m-b-20">
+
+                          <div class="d-flex flex-row comment-row">
+                              <div class="p-2"><span class="round"><img src="https://i.imgur.com/uIgDDDd.jpg" alt="user" width="50"></span></div>
+                              <div class="comment-text w-100">
+                                  <h5>Samso Nagaro</h5>
+                                  <div class="comment-footer">
+                                      <span class="date">April 14, 2019</span>
+                                                    <a href="#" data-abc="true"><i class="fa fa-heart"></i></a>
+                                                </span>
+                                  </div>
+                                  <p class="m-b-5 m-t-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it</p>
+                              </div>
+                          </div>
+
+                          <div class="d-flex flex-row comment-row ">
+                              <div class="p-2"><span class="round"><img src="https://i.imgur.com/tT8rjKC.jpg" alt="user" width="50"></span></div>
+                              <div class="comment-text active w-100">
+                                  <h5>Jonty Andrews</h5>
+                                  <div class="comment-footer">
+                                      <span class="date">March 13, 2020</span>
+                                                    <a href="#" data-abc="true"><i class="fa fa-heart text-danger"></i></a>
+                                                </span>
+                                  </div>
+                                  <p class="m-b-5 m-t-10">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites</p>
+                              </div>
+                          </div>
+
+                          <div class="d-flex flex-row comment-row">
+                              <div class="p-2"><span class="round"><img src="https://i.imgur.com/cAdLHeY.jpg" alt="user" width="50"></span></div>
+                              <div class="comment-text w-100">
+                                  <h5>Sarah Tim</h5>
+                                  <div class="comment-footer">
+                                      <span class="date">Jan 20, 2020</span>
+                                                    <a href="#" data-abc="true"><i class="fa fa-heart"></i></a>
+                                                </span>
+                                  </div>
+                                  <p class="m-b-5 m-t-10">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure</p>
+                              </div>
+                          </div>
+
+                          <div class="d-flex flex-row comment-row">
+                              <div class="p-2"><span class="round"><img src="https://i.imgur.com/uIgDDDd.jpg" alt="user" width="50"></span></div>
+                              <div class="comment-text w-100">
+                                  <h5>Samso Nagaro</h5>
+                                  <div class="comment-footer">
+                                      <span class="date">March 20, 2020</span>
+                                                    <a href="#" data-abc="true"><i class="fa fa-heart"></i></a>
+                                                </span>
+                                  </div>
+                                  <p class="m-b-5 m-t-10">It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+    {% endif %}
+    {% endblock %}

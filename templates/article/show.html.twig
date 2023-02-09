@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ article.name }}{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+    <h4 class="card-header">{% if article.imagename %}
+        <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('thumb') }}" alt="Pas de photo">
+      {% else %}
+        <img src="{{ '/images/articles/empty.jpg' | imagine_filter('thumb') }}" alt="Pas de photo" style="width: 100%; height:auto;">
+      {% endif %}</h4>
+      </div>
+      <div class="col-lg-3">
+    <h1>{{ article.name }}</h1>
+    <p>{{ article.price }} €</p>
+    <p>{{ article.category.title }}</p>
+    </div>
+    </div>
+    <hr>
+    <a href="/article" class="btn btn-secondary">Retour</a>
+  </div>
+{% endblock %}

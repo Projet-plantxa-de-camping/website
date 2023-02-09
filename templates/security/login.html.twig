@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+{% block stylesheets %}{% endblock %}
+<link rel="stylesheet" href="{{ asset('css/login.css') }}">
+
+{% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card text-white" style="border-radius: 1rem; background-color: #1B2942;">
+                        <div class="card-body p-5 text-center">
+                            <div class="mb-md-5 mt-md-4 pb-0">
+                                <h2 class="fw-bold mb-2 text-uppercase">Connexion</h2>
+                                <p class="text-white-50 mb-5">Entrez votre email et mot de passe!</p>
+                                <form action="{{ path('security_login') }}" method="post">
+                                    <div class="form-outline form-white mb-4">
+                                        <input placeholder="Adresse email..." requied name="_username"
+                                               value="{{ lastUsername }}"
+                                               type="text" class="form-control form-control-lg">
+                                    </div>
+                                    <div class="form-form-outline form-white mb-4">
+                                        <input placeholder="Mode de passe..." requied name="_password"
+                                               type="password" class="form-control form-control-lg">
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-light btn-lg px-5">Connexion
+                                    </button>
+                                    <p></p>
+                                    <a class="btn btn-outline-light btn-lg px-5"
+                                       href="{{ path("home") }}">Retour</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card text-white" style="border-radius: 1rem; background-color: #1B2942;">
+                        <div class="card-body text-center">
+                            <div class="mb-md-5 mt-md-4 pb-0">
+                                <div class="card-header">Identifiants stockés en base de données</div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                    <table class="table " style="color: #ffffff">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" >Email</th>
+                                            <th scope="col">Mot de passe</th>
+                                            <th scope="col">Rôle</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>admin@sn.eh</td>
+                                            <td>useruser</td>
+                                            <td>ROLE_USER, ROLE_ADMIN</td>
+                                        </tr>
+                                        <tr>
+                                            <td>user1@sn.eh</td>
+                                            <td>useruser</td>
+                                            <td>ROLE_USER, ROLE_EDITOR</td>
+                                        </tr>
+                                        <tr>
+                                            <td>user2@sn.eh</td>
+                                            <td>useruser</td>
+                                            <td>ROLE_USER</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
