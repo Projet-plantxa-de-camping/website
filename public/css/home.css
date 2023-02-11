@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Calibri:400,300,700);
 
 body {
-    background-color: #D32F2F;
+    background-color: #F5F7FA !important;
     font-family: 'Calibri', sans-serif !important;
 }
 
@@ -75,4 +75,18 @@ body {
 
 .mb-100 {
     margin-bottom: 100px
+}
+
+.map-container-3{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-container-3 iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }

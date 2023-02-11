@@ -9,11 +9,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class AccountController extends AbstractController
 {
     /**
-     * @Route("/", name="account")
-     * @return Response
+     * @Route("/account", name="account_index")
      */
-
-    public function account(): Response
+    public function index(): Response
     {
         return $this->render('account/account.html.twig', ['current_menu' => 'account',]);
     }

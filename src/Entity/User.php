@@ -47,10 +47,29 @@ class User implements UserInterface
     private $confirm_password;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Role")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $roles = [];
+    private $role;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $role_id;
+
+    public function __construct()
+    {
+        $this->role = $this->getDefaultRole();
+    }
+
+    private function getDefaultRole()
+    {
+        $role = $this->getDoctrine()
+            ->getRepository(Role::class)
+            ->findOneBy(['name' => 'User']);
+
+        return $role;
+    }
     public function getRoles(): array
     {
         $roles = $this->roles;
@@ -133,8 +152,21 @@ class User implements UserInterface
         {
         }
 
+
         public
         function getSalt()
         {
+        }
+
+        public function getRoleId(): ?int
+        {
+            return $this->role_id;
+        }
+
+        public function setRoleId(int $role_id): self
+        {
+            $this->role_id = $role_id;
+
+            return $this;
         }
     }

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CookingTime{% endblock %}
+
+{% block body %}
+    <h1>CookingTime</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cooking_time.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ cooking_time.name }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ cooking_time.price }}</td>
+            </tr>
+            <tr>
+                <th>Discount</th>
+                <td>{{ cooking_time.discount }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cooking_time_index') }}">back to list</a>
+
+    <a href="{{ path('cooking_time_edit', {'id': cooking_time.id}) }}">edit</a>
+
+    {{ include('cooking_time/_delete_form.html.twig') }}
+{% endblock %}

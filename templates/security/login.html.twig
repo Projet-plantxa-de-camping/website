@@ -1,88 +1,61 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
-{% block stylesheets %}{% endblock %}
-<link rel="stylesheet" href="{{ asset('css/login.css') }}">
-
+{% extends 'base.html.twig' %}
+{% block title %}Connexion{% endblock %}
 {% block body %}
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-    <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card text-white" style="border-radius: 1rem; background-color: #1B2942;">
-                        <div class="card-body p-5 text-center">
-                            <div class="mb-md-5 mt-md-4 pb-0">
-                                <h2 class="fw-bold mb-2 text-uppercase">Connexion</h2>
-                                <p class="text-white-50 mb-5">Entrez votre email et mot de passe!</p>
-                                <form action="{{ path('security_login') }}" method="post">
-                                    <div class="form-outline form-white mb-4">
-                                        <input placeholder="Adresse email..." requied name="_username"
-                                               value="{{ lastUsername }}"
-                                               type="text" class="form-control form-control-lg">
-                                    </div>
-                                    <div class="form-form-outline form-white mb-4">
-                                        <input placeholder="Mode de passe..." requied name="_password"
-                                               type="password" class="form-control form-control-lg">
-                                    </div>
-                                    <button type="submit" class="btn btn-outline-light btn-lg px-5">Connexion
-                                    </button>
-                                    <p></p>
-                                    <a class="btn btn-outline-light btn-lg px-5"
-                                       href="{{ path("home") }}">Retour</a>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-user font-large-1 float-left"></i>
+            <h3>Connexion</h3>
         </div>
-    </section>
+        <div class="card-body">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/timer.css') }}">
+            <link rel="stylesheet"
+                  href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" type="text/css"
+                  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css"
+                  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+            <link rel="stylesheet" type="text/css"
+                  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+            <link rel="stylesheet" type="text/css"
+                  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+            <link rel="stylesheet" type="text/css"
+                  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-    <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card text-white" style="border-radius: 1rem; background-color: #1B2942;">
-                        <div class="card-body text-center">
-                            <div class="mb-md-5 mt-md-4 pb-0">
-                                <div class="card-header">Identifiants stockés en base de données</div>
-                                <div class="card-body">
-                                    <p class="card-text">
-                                    <table class="table " style="color: #ffffff">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col" >Email</th>
-                                            <th scope="col">Mot de passe</th>
-                                            <th scope="col">Rôle</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>admin@sn.eh</td>
-                                            <td>useruser</td>
-                                            <td>ROLE_USER, ROLE_ADMIN</td>
-                                        </tr>
-                                        <tr>
-                                            <td>user1@sn.eh</td>
-                                            <td>useruser</td>
-                                            <td>ROLE_USER, ROLE_EDITOR</td>
-                                        </tr>
-                                        <tr>
-                                            <td>user2@sn.eh</td>
-                                            <td>useruser</td>
-                                            <td>ROLE_USER</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="grey-bg container-fluid">
+                <section id="minimal-statistics">
+                    <div class="row">
                     </div>
-                </div>
+                    <div class="row">
+                        <v class="col-xl-3 col-sm-6 col-12">
+                            <h4 class="text-white-50 mb-1" style="color: #1B2942 !important;">Email: </h4>
+                            <form action="{{ path('security_login') }}" method="post">
+                                <div class="form-outline form-white mb-4">
+                                    <input placeholder="Adresse email..." requied name="_username"
+                                           value="{{ lastUsername }}"
+                                           type="text" class="form-control form-control-lg">
+                                </div>
+                                <h4 class="text-white-50 mb-1" style="color: #1B2942 !important;">Mot de passe: </h4>
+                                <div class="form-form-outline form-white mb-1">
+                                    <input placeholder="" requied name="_password"
+                                           type="password" class="form-control form-control-lg">
+                                    <button type="submit" class="btn btn-success" style="margin-left: 135px;">Connexion</button>
+                                    <a role="button" class="btn btn-danger"  style="margin-left: 34px;margin-top: -72px;" href="{{ path("home") }}" >Retour</a>
+                                </div>
+
+                            </form>
+                        </v>
+                    </div>
+                </section>
             </div>
         </div>
-    </section>
+    </div>
+
 {% endblock %}

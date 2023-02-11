@@ -3,8 +3,10 @@
     background: #D3D3D3;
 }
 
-.bg-dark {
-    background-color: #1B2942 ;
+.col-12{
+    margin-left: 500px;
 }
 
-
+ .px-5{
+    margin-left: 25px;
+}

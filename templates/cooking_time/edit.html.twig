@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit CookingTime{% endblock %}
+
+{% block body %}
+    <h1>Edit CookingTime</h1>
+
+    {{ include('cooking_time/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('cooking_time_index') }}">back to list</a>
+
+    {{ include('cooking_time/_delete_form.html.twig') }}
+{% endblock %}

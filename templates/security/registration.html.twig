@@ -3,12 +3,48 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-  <h1>Inscription sur le site</h1>
-  {{ form_start(form) }}
-  {{ form_row(form.email, { 'attr': {'placeholder': 'Adresse email...' } }) }}
-  {{ form_row(form.username, { 'label':'Nom d\'utilisateur', 'attr': {'placeholder':'Nom d\'utilisateur...' } }) }}
-  {{ form_row(form.password, { 'label':'Mot de passe', 'attr': {'placeholder':'Mot de passe...' } }) }}
-  {{ form_row(form.confirm_password, { 'label':'Répétez votre mot de passe', 'attr':{'placeholder':'Répétez votre mot de passe...' } }) }}
-  <button type="submit" class="btn btn-success">Inscription</button>
-  {{ form_end(form) }}
+    <div class="card">
+    <div class="card-header d-flex gap-2 align-items-center">
+      <i class="fa fa-user font-large-1 float-left"></i>
+      <h3>Inscription</h3>
+    </div>
+    <div class="card-body">
+      <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/registration.css') }}">
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css"
+            href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+      <link rel="stylesheet" type="text/css"
+            href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+      <link rel="stylesheet" type="text/css"
+            href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+      <link rel="stylesheet" type="text/css"
+            href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+      <div class="grey-bg container-fluid">
+        <section id="minimal-statistics">
+          <div class="row">
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-sm-6 col-12">
+              {{ form_start(form) }}
+              {{ form_row(form.email, { 'attr': {'placeholder': 'Adresse email...' } }) }}
+              {{ form_row(form.username, { 'label':'Nom d\'utilisateur', 'attr': {'placeholder':'Nom d\'utilisateur...' } }) }}
+              {{ form_row(form.password, { 'label':'Mot de passe', 'attr': {'placeholder':'Mot de passe...' } }) }}
+              {{ form_row(form.confirm_password, { 'label':'Répétez votre mot de passe', 'attr':{'placeholder':'Répétez votre mot de passe...' } }) }}
+              <button type="submit" class="btn btn-success">Inscription</button>
+              <a role="button" class="btn btn-danger"  href="{{ path("home") }}">Retour</a>
+              {{ form_end(form) }}
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
 {% endblock %}
