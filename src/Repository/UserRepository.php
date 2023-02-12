@@ -2,9 +2,11 @@
 
 namespace App\Repository;
 
+use App\Entity\Role;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * @method User|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +19,19 @@ class UserRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, User::class);
+    }
+
+    public function createUserWithRoleUser(User $user, UserPasswordEncoderInterface $encoder): User
+    {
+        $hash = $encoder->encodePassword($user, $user->getPassword());
+        $user->setPassword($hash);
+        $roleRepository = $this->_em->getRepository(Role::class);
+        $role = $roleRepository->findOneBy(['label' => 'ROLE_USER']);
+        $user->setRole($role);
+        $this->_em->persist($user);
+        $this->_em->flush();
+
+        return $user;
     }
 
     // /**

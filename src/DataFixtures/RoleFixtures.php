@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\CookingTime;
+use App\Entity\Role;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -11,11 +11,13 @@ class RoleFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $roles = array(
-            array("label" => "User"),
-            array("label" => "Admin")
+            array("label" => "ROLE_USER"),
+            array("label" => "ROLE_EDITOR"),
+            array("label" => "ROLE_ADMIN")
         );
+
         foreach ($roles as $item) {
-            $role = new CookingTime();
+            $role = new Role();
             $role->setLabel($item["label"] );
             $manager->persist($role);
         }
