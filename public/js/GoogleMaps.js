@@ -20,7 +20,7 @@ async function googleMap(api_key, location) {
     const mapProp = {
         center:new google.maps.LatLng(latLng.lat, latLng.lng),
         zoom:18,
-        mapTypeId: "satellite"
+        mapTypeId: "hybrid"
     };
     const map = new google.maps.Map(document.getElementById("map-container-google-3"),mapProp);
 
