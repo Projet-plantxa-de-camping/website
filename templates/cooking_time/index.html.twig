@@ -24,9 +24,9 @@
                 <div class="grey-bg container-fluid">
                     <section id="minimal-statistics">
                         <div class="row">
+                            {% for cooking_time in cooking_times %}
                             <div class="col-xl-3 col-sm-6 col-12">
                                 <div class="card">
-                                    {% for cooking_time in cooking_times %}
                                         <div class="card-content ">
                                             <div class="card-body">
                                                 <div class="media d-flex">
@@ -38,10 +38,11 @@
                                                     </div>
                                                  </div>
                                             </div>
-                                        {% endfor %}
+
                                         </div>
                                 </div>
                             </div>
+                            {% endfor %}
                         </div>
                          <a class="btn btn-warning btn-md px-3"
                         href="{{ path("account_index") }}">Retour</a>

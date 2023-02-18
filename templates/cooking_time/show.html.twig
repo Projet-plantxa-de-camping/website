@@ -24,9 +24,13 @@
                             <div class="row">
                                 <div class="col-xl-3 col-sm-6 col-12">
                                  <h5>Prix : {{ cooking_time.price }} € </h5>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <a class="btn btn-success btn-md px-3" href="{{ path('cooking_time_edit', {'id': cooking_time.id}) }}">Edit</a>
+                                        {% else %}
                                     <a class="btn btn-warning btn-md px-1"
-                                    href="{{ path("cooking_time_index") }}">Retour</a>
+                                       href="{{ path("cooking_time_index") }}">Retour</a>
                                     <a class="btn btn-success btn-md px-3">Achat</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </section>

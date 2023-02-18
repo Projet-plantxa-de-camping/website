@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * @Route("/admin", name="admin_")
@@ -47,6 +48,16 @@ class AdminController extends AbstractController
             return $this->redirectToRoute('admin_user_index');
         }
         return $this->render('admin/userEdit.html.twig', ['formUser' => $form->createView()]);
+    }
+
+
+
+    /**
+     * @Security("is_granted('ROLE_ADMIN')")
+     */
+    public function adminAction()
+    {
+        // code pour l'administrateur seulement
     }
 
 
