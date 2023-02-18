@@ -1,39 +1,53 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}CookingTime index{% endblock %}
-
+{% block title %}Mon Compte{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
 {% block body %}
-    <h1>CookingTime index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Discount</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for cooking_time in cooking_times %}
-            <tr>
-                <td>{{ cooking_time.id }}</td>
-                <td>{{ cooking_time.name }}</td>
-                <td>{{ cooking_time.price }}</td>
-                <td>{{ cooking_time.discount }}</td>
-                <td>
-                    <a href="{{ path('cooking_time_show', {'id': cooking_time.id}) }}">show</a>
-                    <a href="{{ path('cooking_time_edit', {'id': cooking_time.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {% if not app.user %}
+        <h1>Egun on</h1>
 
-    <a href="{{ path('cooking_time_new') }}">Create new</a>
+        <p>Veuillez vous connecter pour accéder au site.</p>
+        <a href="{{ path('security_login') }}" class="btn btn-secondary">Connexion</a>
+        <a href="{{ path('security_registration') }}" class="btn btn-primary">Inscription</a>
+    {% else %}
+        <div class="card">
+            <div class="card-header">
+            <i class="fa fa-shopping-cart danger font-large-1 float-left"></i>
+                <div class="user-name">
+                <h3 class="mb-0 ml-3">Shop</h3>
+                </div>
+
+        </div>
+            <div class="card-body">
+                <div class="grey-bg container-fluid">
+                    <section id="minimal-statistics">
+                        <div class="row">
+                            <div class="col-xl-3 col-sm-6 col-12">
+                                <div class="card">
+                                    {% for cooking_time in cooking_times %}
+                                        <div class="card-content ">
+                                            <div class="card-body">
+                                                <div class="media d-flex">
+                                                    <div class="align-self-center">
+                                                        <i class="fa fa-clock-o danger font-large-2 float-left"></i>
+                                                     </div>
+                                                    <div class="media-body text-right" style="margin-top: 10px;">
+                                                        <a href="{{ path('cooking_time_show', {'id': cooking_time.id}) }}" style="color: #1B2942"><h5 >{{ cooking_time.name }}</h5></a>
+                                                    </div>
+                                                 </div>
+                                            </div>
+                                        {% endfor %}
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                         <a class="btn btn-warning btn-md px-3"
+                        href="{{ path("account_index") }}">Retour</a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

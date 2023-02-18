@@ -1,37 +1,37 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}CookingTime{% endblock %}
-
-{% block body %}
-    <h1>CookingTime</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ cooking_time.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ cooking_time.name }}</td>
-            </tr>
-            <tr>
-                <th>Price</th>
-                <td>{{ cooking_time.price }}</td>
-            </tr>
-            <tr>
-                <th>Discount</th>
-                <td>{{ cooking_time.discount }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('cooking_time_index') }}">back to list</a>
-
-    <a href="{{ path('cooking_time_edit', {'id': cooking_time.id}) }}">edit</a>
-
-    {{ include('cooking_time/_delete_form.html.twig') }}
+{% block title %}Mon Compte{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 {% endblock %}
+{% block body %}
 
-
-
+    {% if not app.user %}
+        <h1>Egun on</h1>
+        <p>Veuillez vous connecter pour accéder au site.</p>
+        <a href="{{ path('security_login') }}" class="btn btn-secondary">Connexion</a>
+        <a href="{{ path('security_registration') }}" class="btn btn-primary">Inscription</a>
+    {% else %}
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-shopping-cart danger font-large-1 float-left"></i>
+                    <div class="user-name">
+                    <h3 class="mb-0 ml-3">{{ cooking_time.name }}</h3>
+                    </div>
+            </div>
+                <div class="card-body">
+                    <div class="grey-bg container-fluid">
+                        <section id="minimal-statistics">
+                            <div class="row">
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                 <h5>Prix : {{ cooking_time.price }} € </h5>
+                                    <a class="btn btn-warning btn-md px-1"
+                                    href="{{ path("cooking_time_index") }}">Retour</a>
+                                    <a class="btn btn-success btn-md px-3">Achat</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+        </div>
+    {% endif %}
+{% endblock %}

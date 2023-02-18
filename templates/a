@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CookingTime index{% endblock %}
+
+{% block body %}
+    <h1>CookingTime index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for cooking_time in cooking_times %}
+            <tr>
+                <td>{{ cooking_time.id }}</td>
+                <td>{{ cooking_time.name }}</td>
+                <td>{{ cooking_time.price }}</td>
+                <td>{{ cooking_time.discount }}</td>
+                <td>
+                    <a href="{{ path('cooking_time_show', {'id': cooking_time.id}) }}">show</a>
+                    <a href="{{ path('cooking_time_edit', {'id': cooking_time.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cooking_time_new') }}">Create new</a>
+{% endblock %}

@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="537f3edd-0e33-4525-b160-1911f4742125" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/public/js/GoogleMaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/GoogleMaps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/Loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/projet-plantxa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projet-plantxa.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/account.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/account.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cooking_time/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cooking_time/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cooking_time/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cooking_time/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/on-off/on-off.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/on-off/on-off.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/timer/timer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/timer/timer.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +164,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/core" />
     </include_path>
   </component>
   <component name="ProjectId" id="2LbnFOGtPgJBCB6wnEyaY5HHIkA" />
@@ -180,7 +199,10 @@
       <workItem from="1676148554190" duration="466000" />
       <workItem from="1676161116407" duration="949000" />
       <workItem from="1676217404256" duration="2125000" />
-      <workItem from="1676394343848" duration="4665000" />
+      <workItem from="1676394343848" duration="7609000" />
+      <workItem from="1676557642850" duration="40000" />
+      <workItem from="1676557947109" duration="4575000" />
+      <workItem from="1676690395460" duration="4498000" />
     </task>
     <servers />
   </component>
