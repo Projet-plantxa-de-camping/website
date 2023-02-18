@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Modifier un Utilisateur{% endblock %}
-
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
 {% block body %}
   {{ form_start(formUser) }}
   {{ form_widget(formUser) }}

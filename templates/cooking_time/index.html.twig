@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}Mon Compte{% endblock %}
+{% block title %}Temps de cuissons{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 {% endblock %}
@@ -44,8 +44,12 @@
                             </div>
                             {% endfor %}
                         </div>
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <a class="btn btn-danger btn-md px-3" href="{{ path('admin_show') }}">Retour</a>
+                            {% else %}
                          <a class="btn btn-warning btn-md px-3"
                         href="{{ path("account_index") }}">Retour</a>
+                            {% endif %}
                     </section>
                 </div>
             </div>
