@@ -5,8 +5,8 @@
 {% block body %}
   {{ form_start(formUser) }}
   {{ form_widget(formUser) }}
-  <button type="submit" class="btn btn-outline-success">Modifier</button>
-  <a class="btn btn-outline-danger"
+  <button type="submit" class="btn btn-success">Modifier</button>
+  <a class="btn btn-danger"
      href="{{ path("admin_user_index") }}">Retour</a>
   {{ form_end(formUser) }}
 {% endblock %}

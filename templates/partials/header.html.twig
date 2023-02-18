@@ -13,7 +13,7 @@
             <ul class="navbar-nav ml-auto">
                 {% if is_granted('ROLE_ADMIN') %}
                     <li class="nav-item">
-                        <a href="{{ path('admin_user_index') }}" class="nav-link ">Administration</a>
+                        <a href="{{ path('admin_show') }}" class="nav-link ">Administration</a>
                     </li>
                 {% endif %}
                 {% if not app.user %}
