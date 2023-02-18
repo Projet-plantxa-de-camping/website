@@ -60,5 +60,4 @@ class AdminController extends AbstractController
         // code pour l'administrateur seulement
     }
 
-
 }

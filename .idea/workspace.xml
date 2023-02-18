@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="537f3edd-0e33-4525-b160-1911f4742125" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/userEdit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/userEdit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/userIndex.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/userIndex.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cooking_time/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cooking_time/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cooking_time/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cooking_time/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cooking_time/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cooking_time/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +187,7 @@
       <workItem from="1676394343848" duration="7609000" />
       <workItem from="1676557642850" duration="40000" />
       <workItem from="1676557947109" duration="4575000" />
-      <workItem from="1676690395460" duration="10544000" />
+      <workItem from="1676690395460" duration="11591000" />
     </task>
     <servers />
   </component>
