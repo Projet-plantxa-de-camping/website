@@ -47,5 +47,5 @@ class HomeController extends AbstractController
             'visitCount' => $visitCount,
         ]);
     }
-    
+
 }

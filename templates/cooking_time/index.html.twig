@@ -46,6 +46,7 @@
                         </div>
                             {% if is_granted('ROLE_ADMIN') %}
                             <a class="btn btn-danger btn-md px-3" href="{{ path('admin_show') }}">Retour</a>
+                                <a class="btn btn-success btn-md px-3" href="{{ path('cooking_time_new') }}">Ajouter</a>
                             {% else %}
                          <a class="btn btn-warning btn-md px-3"
                         href="{{ path("account_index") }}">Retour</a>

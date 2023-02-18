@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New CookingTime{% endblock %}
-
+{% block title %}Ajouter produit{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
 {% block body %}
-    <h1>Create new CookingTime</h1>
+    <h1>Ajouter produit</h1>
 
     {{ include('cooking_time/_form.html.twig') }}
 
-    <a href="{{ path('cooking_time_index') }}">back to list</a>
+    <a class="btn btn-primary btn-md px-3" href="{{ path('cooking_time_index') }}" style="margin-top: -73px;margin-left: 100px;">back to list</a>
 {% endblock %}
