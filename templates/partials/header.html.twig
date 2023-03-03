@@ -15,6 +15,10 @@
                     <li class="nav-item">
                         <a href="{{ path('admin_show') }}" class="nav-link ">Administration</a>
                     </li>
+                {% elseif is_granted('ROLE_USER')%}
+                <li class="nav-item">
+                    <a href="{{ path('account_index') }}" class="nav-link">Mon compte</a>
+                </li>
                 {% endif %}
                 {% if not app.user %}
                     <li class="nav-item">
@@ -24,9 +28,6 @@
                         <a href="{{ path('security_registration') }}" class="nav-link">Inscription</a>
                     </li>
                 {% else %}
-                    <li class="nav-item">
-                        <a href="{{ path('account_index') }}" class="nav-link">Mon compte</a>
-                    </li>
                     <li class="nav-item">
                         <a href="{{ path('security_logout') }}" class="nav-link">Déconnexion</a>
                     </li>

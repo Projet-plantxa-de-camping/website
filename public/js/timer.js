@@ -39,6 +39,6 @@ function startTimer(id, deadline) {
 }
 
 window.onload = function () {
-    var deadline = new Date("February 22, 2023 13:49:59");
+    var deadline = new Date("February 25, 2023 15:49:59");
     startTimer("clock", deadline);
 };

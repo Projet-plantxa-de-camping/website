@@ -6,11 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="537f3edd-0e33-4525-b160-1911f4742125" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/timer.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/timer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/timer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/timer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cooking_time/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cooking_time/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cooking_time/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cooking_time/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/invoide/invoide.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoide/invoide.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/on-off/on-off.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/on-off/on-off.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EditUserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EditUserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +196,10 @@
       <workItem from="1676557947109" duration="4575000" />
       <workItem from="1676690395460" duration="16753000" />
       <workItem from="1676826765061" duration="1006000" />
-      <workItem from="1677069090174" duration="1003000" />
+      <workItem from="1677069090174" duration="2806000" />
+      <workItem from="1677075849782" duration="605000" />
+      <workItem from="1677333054849" duration="5094000" />
+      <workItem from="1677855287428" duration="2461000" />
     </task>
     <servers />
   </component>
