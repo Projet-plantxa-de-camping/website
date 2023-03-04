@@ -13,8 +13,5 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AddUserCookingTime extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
 
-    }
 }

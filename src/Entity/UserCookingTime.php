@@ -20,12 +20,12 @@ class UserCookingTime
     /**
      * @ORM\Column(type="integer")
      */
-    private $user_id;
+    private ?int $user_id;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $cooking_time_id;
+    private ?int $cooking_time_id;
 
     public function getId(): ?int
     {

@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="537f3edd-0e33-4525-b160-1911f4742125" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Liste articles.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CookingTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CookingTime.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/EditUserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EditUserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserCookingTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserCookingTime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/AddUserCookingTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AddUserCookingTime.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +196,7 @@
       <workItem from="1677333054849" duration="5094000" />
       <workItem from="1677855287428" duration="3932000" />
       <workItem from="1677875807957" duration="1533000" />
-      <workItem from="1677935901180" duration="4556000" />
+      <workItem from="1677935901180" duration="5390000" />
     </task>
     <servers />
   </component>

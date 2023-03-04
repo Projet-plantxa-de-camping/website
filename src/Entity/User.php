@@ -58,6 +58,11 @@ class User implements UserInterface
      */
     private int $role_id;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private int $remaining_time;
+
     public function getConfirmPassword()
     {
         return $this->confirm_password;
@@ -139,6 +144,18 @@ class User implements UserInterface
     public function setRole(Role $role): self
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    public function getRemaining_time(): ?int
+    {
+        return $this->remaining_time;
+    }
+
+    public function setRemaining_time(int $remaining_time): self
+    {
+        $this->remaining_time = $remaining_time;
 
         return $this;
     }
