@@ -35,7 +35,7 @@ class CookingTime
     /**
      * @ORM\Column(type="integer")
      */
-    private ?int $value;
+    private int $value;
 
     public function getId(): ?int
     {
@@ -78,12 +78,12 @@ class CookingTime
         return $this;
     }
 
-    public function getValue(): ?string
+    public function getValue(): int
     {
         return $this->value;
     }
 
-    public function setValue(string $value): self
+    public function setValue(int $value): self
     {
         $this->value = $value;
 

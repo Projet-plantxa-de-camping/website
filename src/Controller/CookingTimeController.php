@@ -3,18 +3,28 @@
 namespace App\Controller;
 
 use App\Entity\CookingTime;
+use App\Entity\UserCookingTime;
 use App\Form\CookingTimeType;
 use App\Repository\CookingTimeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
+
 
 /**
  * @Route("/cooking/time")
  */
 class CookingTimeController extends AbstractController
 {
+    protected EntityManagerInterface $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
     /**
      * @Route("/", name="cooking_time_index", methods={"GET"})
      */
@@ -90,5 +100,35 @@ class CookingTimeController extends AbstractController
         }
 
         return $this->redirectToRoute('cooking_time_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    /**
+     * @Route("/add/{id}", name="add_cooking_time", methods={"POST"})
+     */
+    public function addCookingTime(Request $request, CookingTime $cookingTime): Response
+    {
+        $cookingTimeId = $request->get('cookingTimeId');
+
+        // Get the value of the CookingTime entity
+        $cookingTimeValue = $cookingTime->getValue();
+
+        // Get the current user
+        $user = $this->getUser();
+
+        // Update the remaining_time value of the User entity
+        $user->setRemainingTime($user->getRemainingTime() + $cookingTimeValue);
+
+        // Create a new UserCookingTime entity
+        $userCookingTime = new UserCookingTime();
+        $userCookingTime->setUser($user);
+        $userCookingTime->setCookingTime($cookingTime);
+
+        // Persist the new UserCookingTime entity
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($userCookingTime);
+        $entityManager->flush();
+
+        // Redirect the user to a confirmation page
+        return $this->redirectToRoute('home');
     }
 }

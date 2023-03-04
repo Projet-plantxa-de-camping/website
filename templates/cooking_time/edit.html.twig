@@ -10,8 +10,8 @@
 
     {{ include('cooking_time/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a class="btn btn-primary btn-md px-3" href="{{ path('cooking_time_index') }}" style="margin-top: -73px;margin-left: 100px;">Retour à la liste</a>
-
     {{ include('cooking_time/_delete_form.html.twig') }}
+
+    <a class="btn btn-primary btn-md px-1" href="{{ path('cooking_time_index') }}">Retour à la liste</a>
 
 {% endblock %}

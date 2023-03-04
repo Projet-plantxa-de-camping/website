@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Repository\UserCookingTimeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,40 +17,42 @@ class UserCookingTime
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="userCookingTimes")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private ?int $user_id;
+    private ?User $user;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity=CookingTime::class, inversedBy="userCookingTimes")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private ?int $cooking_time_id;
+    private ?CookingTime $cookingTime;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUserId(): ?int
+    public function getUser(): ?User
     {
-        return $this->user_id;
+        return $this->user;
     }
 
-    public function setUserId(int $user_id): self
+    public function setUser(?User $user): self
     {
-        $this->user_id = $user_id;
+        $this->user = $user;
 
         return $this;
     }
 
-    public function getCookingTimeId(): ?int
+    public function getCookingTime(): ?CookingTime
     {
-        return $this->cooking_time_id;
+        return $this->cookingTime;
     }
 
-    public function setCookingTimeId(int $cooking_time_id): self
+    public function setCookingTime(?CookingTime $cookingTime): self
     {
-        $this->cooking_time_id = $cooking_time_id;
+        $this->cookingTime = $cookingTime;
 
         return $this;
     }
