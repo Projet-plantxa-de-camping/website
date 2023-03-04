@@ -32,6 +32,11 @@ class CookingTime
      */
     private $discount;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $value;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class CookingTime
     public function setDiscount(int $discount): self
     {
         $this->discount = $discount;
+
+        return $this;
+    }
+
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
+
+    public function setValue(string $value): self
+    {
+        $this->value = $value;
 
         return $this;
     }

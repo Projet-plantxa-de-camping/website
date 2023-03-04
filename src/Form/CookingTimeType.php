@@ -15,6 +15,7 @@ class CookingTimeType extends AbstractType
             ->add('name')
             ->add('price')
             ->add('discount')
+            ->add('value')
         ;
     }
 
