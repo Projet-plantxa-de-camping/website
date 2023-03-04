@@ -48,6 +48,11 @@ class User implements UserInterface
     private string $confirm_password;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    private int $remaining_time;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Role")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -57,11 +62,6 @@ class User implements UserInterface
      * @ORM\Column(type="integer")
      */
     private int $role_id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private int $remaining_time;
 
     public function getConfirmPassword()
     {
@@ -115,6 +115,18 @@ class User implements UserInterface
         return $this;
     }
 
+    public function getRemainingTime(): ?int
+    {
+        return $this->remaining_time;
+    }
+
+    public function setRemainingTime(int $remaining_time): self
+    {
+        $this->remaining_time = $remaining_time;
+
+        return $this;
+    }
+
     public function eraseCredentials(): void
     {
     }
@@ -148,17 +160,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getRemaining_time(): ?int
-    {
-        return $this->remaining_time;
-    }
 
-    public function setRemaining_time(int $remaining_time): self
-    {
-        $this->remaining_time = $remaining_time;
-
-        return $this;
-    }
 
 
 }

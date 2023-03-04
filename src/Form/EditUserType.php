@@ -28,6 +28,9 @@ class EditUserType extends AbstractType
                 'first_options'  => ['label' => 'Nouveau mot de passe'],
                 'second_options' => ['label' => 'Répéter le nouveau mot de passe'],
             ])
+            ->add('remaining_time', null, [
+                'label' => 'Temps restant (en minutes)'
+            ])
             ->add('roles',ChoiceType::class,[
                 'choices' => [
                     'Utilisateur' => 'ROLE_USER',
