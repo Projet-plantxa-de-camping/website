@@ -27,10 +27,12 @@ body {
     border-bottom: 1px solid rgba(120, 130, 140, 0.13);
     padding: 15px;
 }
-.comment-text:hover{
+
+.comment-text:hover {
     visibility: hidden;
 }
-.comment-text:hover{
+
+.comment-text:hover {
     visibility: visible;
 }
 
@@ -77,16 +79,17 @@ body {
     margin-bottom: 100px
 }
 
-.map-container-3{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
+.map-container-3 {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
 }
-.map-container-3 iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
+
+.map-container-3 iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }

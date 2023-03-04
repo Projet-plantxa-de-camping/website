@@ -15,27 +15,27 @@ class CookingTime
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private ?string $name;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $price;
+    private ?int $price;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $discount;
+    private ?int $discount;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $value;
+    private ?int $value;
 
     public function getId(): ?int
     {

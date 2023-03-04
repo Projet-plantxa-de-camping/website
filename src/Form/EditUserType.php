@@ -12,6 +12,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class EditUserType extends AbstractType
 {
+
+
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -43,4 +46,5 @@ class EditUserType extends AbstractType
             'data_class' => User::class,
         ]);
     }
+
 }

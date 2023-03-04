@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>{% block title %}Ongi etorri!{% endblock %}</title>
+    <meta charset="UTF-8">
+    <title>{% block title %}Ongi etorri!{% endblock %}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"
           href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
     <link rel="stylesheet" type="text/css"
@@ -14,25 +15,25 @@
     <link rel="stylesheet" type="text/css"
           href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  {% block stylesheets %}
-    {{ encore_entry_link_tags('app') }}
-  {% endblock %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 </head>
 <body>
 {{ include('partials/header.html.twig') }}
 <div class="container">
-  {% for label, messages in app.flashes %}
-    <div class="container mt-2">
-      {% for message in messages %}
-      <div class="alert alert-{{ label }}" role="alert">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        {{ message | raw }}
-        {% endfor %}
-      </div>
-    </div>
-  {% endfor %}
-  {% block body %}
-  {% endblock %}
+    {% for label, messages in app.flashes %}
+        <div class="container mt-2">
+            {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message | raw }}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    {% block body %}
+    {% endblock %}
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -45,4 +46,5 @@
         crossorigin="anonymous"></script>
 
 </body>
+
 </html>
