@@ -48,9 +48,9 @@ class User implements UserInterface
     private string $confirm_password;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", options={"default" : 0})
      */
-    private int $remaining_time;
+    private int $remaining_time=0;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Role")
