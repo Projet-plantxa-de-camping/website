@@ -20,12 +20,6 @@ class HomeController extends AbstractController
     public function index(): Response
 
     {
-        // Récupération du gestionnaire d'entité (EntityManager)
-        $entityManager = $this->getDoctrine()->getManager();
-
-        // Récupération du nombre d'utilisateurs enregistrés
-        $userCount = $entityManager->getRepository(User::class)->count([]);
-
         // Récupération de l'objet de session
         $session = $this->get('session');
 

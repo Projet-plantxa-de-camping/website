@@ -2,6 +2,7 @@
 {% block title %}Accueil{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="icon" href="https://euskal-plantxa.fr/wp-content/themes/euskal-plantxa/assets/icons/euskal-plantxa-symbole-black.svg" />
 {% endblock %}
 {% block body %}
 
@@ -17,7 +18,7 @@
         <h1>Egun on {{ app.user.username }}</h1>
         {% if is_granted('ROLE_ADMIN') %}
         {% else %}
-            <h6>Votre temps de cuisson restant est de {{ app.user.remainingTime }} minutes.</h6>
+            <h6>Votre temps de cuisson restant est de {{ app.user.remainingTime  }} minutes.</h6>
         {% endif %}
 
 
