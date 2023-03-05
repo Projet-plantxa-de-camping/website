@@ -21,8 +21,8 @@
               {{ form_row(form.username, { 'label':'Nom d\'utilisateur', 'attr': {'placeholder':'Nom d\'utilisateur...' } }) }}
               {{ form_row(form.password, { 'label':'Mot de passe', 'attr': {'placeholder':'Mot de passe...' } }) }}
               {{ form_row(form.confirm_password, { 'label':'Répétez votre mot de passe', 'attr':{'placeholder':'Répétez votre mot de passe...' } }) }}
+                <a role="button" class="btn btn-danger"  href="{{ path("home") }}">Retour</a>
               <button type="submit" class="btn btn-success">Inscription</button>
-              <a role="button" class="btn btn-danger"  href="{{ path("home") }}">Retour</a>
               {{ form_end(form) }}
             </div>
           </div>

@@ -15,7 +15,10 @@
 
     {% else %}
         <h1>Egun on {{ app.user.username }}</h1>
-       <h6>Votre temps de cuisson restant est de {{ app.user.remainingTime }} minutes.</h6>
+        {% if is_granted('ROLE_ADMIN') %}
+        {% else %}
+            <h6>Votre temps de cuisson restant est de {{ app.user.remainingTime }} minutes.</h6>
+        {% endif %}
 
 
         <div class="grey-bg container-fluid">
@@ -261,4 +264,5 @@
             </div>
         </div>
     {% endif %}
+
 {% endblock %}
