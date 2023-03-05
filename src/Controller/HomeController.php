@@ -42,18 +42,9 @@ class HomeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $userCount = $entityManager->getRepository(User::class)->count([]);
 
-        $user = $this->getUser(); // récupérer l'utilisateur actuellement connecté
-
-        if (!$user) {
-            throw $this->createNotFoundException('User not found');
-        }
-
-        $remainingTime = $user->getRemainingTime();
-
         return $this->render('home/home.html.twig', [
             'userCount' => $userCount,
             'visitCount' => $visitCount,
-            'remainingTime' => $remainingTime,
         ]);
     }
 

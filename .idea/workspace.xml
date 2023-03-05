@@ -7,7 +7,6 @@
     <list default="true" id="537f3edd-0e33-4525-b160-1911f4742125" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +195,7 @@
       <workItem from="1677333054849" duration="5094000" />
       <workItem from="1677855287428" duration="3932000" />
       <workItem from="1677875807957" duration="1533000" />
-      <workItem from="1677935901180" duration="19526000" />
+      <workItem from="1677935901180" duration="20228000" />
     </task>
     <servers />
   </component>
