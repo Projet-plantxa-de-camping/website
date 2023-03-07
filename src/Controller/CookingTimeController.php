@@ -6,6 +6,8 @@ use App\Entity\CookingTime;
 use App\Entity\UserCookingTime;
 use App\Form\CookingTimeType;
 use App\Repository\CookingTimeRepository;
+use DateTime;
+use DateTimeZone;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -122,6 +124,10 @@ class CookingTimeController extends AbstractController
         $userCookingTime = new UserCookingTime();
         $userCookingTime->setUser($user);
         $userCookingTime->setCookingTime($cookingTime);
+
+        // Set the date with Paris timezone
+        $date = new DateTime('now', new DateTimeZone('Europe/Paris'));
+        $userCookingTime->setDate($date);
 
         // Persist the new UserCookingTime entity
         $entityManager = $this->getDoctrine()->getManager();

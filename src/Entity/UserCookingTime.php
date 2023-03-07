@@ -28,6 +28,11 @@ class UserCookingTime
      */
     private ?CookingTime $cookingTime;
 
+    /**
+     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private ?\DateTimeInterface $date;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,6 +58,18 @@ class UserCookingTime
     public function setCookingTime(?CookingTime $cookingTime): self
     {
         $this->cookingTime = $cookingTime;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }
