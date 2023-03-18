@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mes Factures{% endblock %}
+
+{% block body %}
+    <html>a
+    <body>
+    <h1>Facture</h1>
+    <p>Voici les détails de votre commande :</p>
+    <ul>
+        <li><strong>Produit :</strong> {{ user_cooking_time.name }}</li>
+        <li><strong>Prix :</strong> {{ user_cooking_time.price }} EUR</li>
+    </ul>
+    <p><strong>Total :</strong> {{ user_cooking_time.price }} EUR</p>
+    <p>Merci pour votre achat !</p>
+    </body>
+    </html>
+    </div>
+{% endblock %}

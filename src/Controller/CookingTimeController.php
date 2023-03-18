@@ -134,7 +134,7 @@ class CookingTimeController extends AbstractController
         $entityManager->persist($userCookingTime);
         $entityManager->flush();
 
-        // Redirect the user to a confirmation page
+        // Rediriger l'utilisateur vers la page d'accueil
         return $this->redirectToRoute('home');
     }
 }

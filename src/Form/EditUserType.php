@@ -8,12 +8,20 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class EditUserType extends AbstractType
+
 {
+    private $passwordEncoder;
 
-
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -40,7 +48,19 @@ class EditUserType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'label' => 'Rôles'
-            ]);
+            ])
+            ->addEventListener(FormEvents::SUBMIT, [$this, 'onSubmit']);
+    }
+
+    public function onSubmit(FormEvent $event)
+    {
+        $data = $event->getData();
+        $password = $data->getPassword();
+
+        if ($password) {
+            $encodedPassword = $this->passwordEncoder->encodePassword($data, $password);
+            $data->setPassword($encodedPassword);
+        }
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -147,7 +147,7 @@ class MesuresController extends AbstractController
             ],
         ]);
 
-        return $this->render('mesures/invoide.html.twig', [
+        return $this->render('mesures/invoice.html.twig', [
             'chart1' => $chart_humidity,
             'chart2' => $chart_temp,
             'chart3' => $chart_humidity2,
