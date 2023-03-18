@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Plantxa;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -36,9 +37,13 @@ class HomeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $userCount = $entityManager->getRepository(User::class)->count([]);
 
+        // Récupération du nombre de plantxa enregistrés
+        $PlantxaCount = $entityManager->getRepository(Plantxa::class)->count([]);
+
         return $this->render('home/home.html.twig', [
             'userCount' => $userCount,
             'visitCount' => $visitCount,
+            'PlantxaCount' => $PlantxaCount,
         ]);
     }
 
