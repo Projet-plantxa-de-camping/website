@@ -1,18 +1,65 @@
 {% extends 'base.html.twig' %}
-{% block title %}Mes Factures{% endblock %}
-
+{% block title %}Facture{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
 {% block body %}
-    <html>a
-    <body>
-    <h1>Facture</h1>
-    <p>Voici les détails de votre commande :</p>
-    <ul>
-        <li><strong>Produit :</strong> {{ user_cooking_time.name }}</li>
-        <li><strong>Prix :</strong> {{ user_cooking_time.price }} EUR</li>
-    </ul>
-    <p><strong>Total :</strong> {{ user_cooking_time.price }} EUR</p>
-    <p>Merci pour votre achat !</p>
-    </body>
-    </html>
+    <div class="card mx-auto">
+        <div class="card-header">
+            <i class="fa fa-envelope-open-o success font-large-1 float-left"></i>
+            <div class="user-name">
+                <h3 class="mb-0 ml-3">Facture</h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="grey-bg container-fluid">
+                <section id="minimal-statistics">
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="media d-flex">
+                                            <div class="container bg-white">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p>Date : {{ achat.date|date('d/m/Y H:i:s') }}</p>
+                                                        <p>Client : {{ user.username }}</p>
+                                                        <p>Email : {{ user.email }}</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h2>Détails de la commande</h2>
+                                                        <table class="table table-bordered border">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>Produit</th>
+                                                                <th>Prix</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>{{ produit.name }}</td>
+                                                                <td>{{ produit.price }} EUR</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
 {% endblock %}
