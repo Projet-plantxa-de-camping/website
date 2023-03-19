@@ -29,7 +29,7 @@
                                     <div class="card">
                                         <div class="card-content ">
                                             <div class="card-body">
-                                                <div class="media d-flex">
+                                                <div class="media d-flex align-items-center">
                                                     <div class="align-self-center">
                                                         <i class="fa fa-envelope-open-o success font-large-1 float-left"></i>
                                                     </div>
@@ -39,6 +39,7 @@
                                                             <h5>{{ user_cooking_time.cookingTime.name }}</h5>
                                                             <p>{{ user_cooking_time.date|date('d/m/Y h:i') }}</p>
 {#                                                            <p>{{ user_cooking_time.date|localizeddate('none', 'none', null, null, 'd MMMM Y à H\hi', null, 'fr') }}</p>#}
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -48,13 +49,8 @@
                                 </div>
                             {% endfor %}
                         </div>
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class="btn btn-danger btn-md px-3" href="{{ path('admin_show') }}">Retour</a>
-                            <a class="btn btn-success btn-md px-3" href="{{ path('cooking_time_new') }}">Ajouter</a>
-                        {% else %}
                             <a class="btn btn-warning btn-md px-3"
                                href="{{ path("account_index") }}">Retour</a>
-                        {% endif %}
                     </section>
                 </div>
             </div>
