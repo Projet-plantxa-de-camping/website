@@ -49,10 +49,19 @@ class InvoiceController extends AbstractController
      */
     public function index(UserCookingTimeRepository $userCookingTimeRepository): Response
     {
+        // Récupérer l'utilisateur connecté
+        $user = $this->getUser();
 
+        // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
+        if (!$user) {
+            return $this->redirectToRoute('app_login');
+        }
+
+        // Récupérer les factures de l'utilisateur connecté
+        $cookingTimes = $userCookingTimeRepository->findBy(['user' => $user]);
 
         return $this->render('invoice/index.html.twig', [
-            'cooking_times' => $userCookingTimeRepository->findAll(),
+            'user_cooking_times' => $cookingTimes,
         ]);
     }
 

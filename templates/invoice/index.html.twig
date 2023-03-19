@@ -24,7 +24,7 @@
                 <div class="grey-bg container-fluid">
                     <section id="minimal-statistics">
                         <div class="row">
-                            {% for user_cooking_time in cooking_times %}
+                            {% for user_cooking_time in user_cooking_times %}
                                 <div class="col-xl-3 col-sm-6 col-12">
                                     <div class="card">
                                         <div class="card-content ">
@@ -39,10 +39,6 @@
                                                             <h5>{{ user_cooking_time.cookingTime.name }}</h5>
                                                             <p>{{ user_cooking_time.date|date('d/m/Y h:i') }}</p>
 {#                                                            <p>{{ user_cooking_time.date|localizeddate('none', 'none', null, null, 'd MMMM Y à H\hi', null, 'fr') }}</p>#}
-
-
-
-
                                                     </div>
                                                 </div>
                                             </div>

@@ -65,7 +65,7 @@ class CookingTimeController extends AbstractController
      */
     public function show(CookingTime $cookingTime): Response
     {
-        return $this->render('cooking_time/index.html.twig', [
+        return $this->render('cooking_time/show.html.twig', [
             'cooking_time' => $cookingTime,
         ]);
     }
