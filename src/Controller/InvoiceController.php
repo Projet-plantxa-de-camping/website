@@ -6,6 +6,7 @@ use App\Entity\UserCookingTime;
 use App\Entity\CookingTime;
 use App\Repository\CookingTimeRepository;
 use App\Repository\UserCookingTimeRepository;
+use App\Repository\UserRepository;
 use DateTime;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -73,15 +74,30 @@ class InvoiceController extends AbstractController
     /**
      * @Route("/admin", name="user_cooking_time_index_admin", methods={"GET"})
      */
-    public function indexAdmin(UserCookingTimeRepository $userCookingTimeRepository): Response
+    public function indexAdmin(Request $request, UserCookingTimeRepository $userCookingTimeRepository, UserRepository $userRepository): Response
     {
+        // Vérifier si l'email a été soumis dans le formulaire
+        $email = $request->query->get('email');
 
-        // Récupérer les factures de l'utilisateur connecté
-        $cookingTimes = $userCookingTimeRepository->findAll();
+        if ($email) {
+            // Récupérer l'utilisateur correspondant à l'email
+            $user = $userRepository->findOneBy(['email' => $email]);
+
+            // Récupérer les factures de l'utilisateur
+            $cookingTimes = $userCookingTimeRepository->findBy(['user' => $user]);
+        } else {
+            // Récupérer toutes les factures
+            $cookingTimes = $userCookingTimeRepository->findAll();
+        }
 
         return $this->render('invoice/admin_index.html.twig', [
             'user_cooking_times' => $cookingTimes,
+            'email' => $email,
         ]);
     }
+
+
+
+
 
 }
