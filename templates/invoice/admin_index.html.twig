@@ -34,7 +34,7 @@
                                                         <i class="fa fa-envelope-open-o success font-large-1 float-left"></i>
                                                     </div>
                                                     <div class="media-body text-right" style="margin-top: 10px;">
-                                                        <a href="{{ path('admin_invoice', {'user_cooking_time_id': user_cooking_time.id}) }}"
+                                                        <a href="{{ path('invoice', {'user_cooking_time_id': user_cooking_time.id}) }}"
                                                            style="color: #1B2942">
                                                             <h5>{{ user_cooking_time.cookingTime.name }}</h5>
                                                             <p>{{ user_cooking_time.date|date('d/m/Y h:i') }}</p>
