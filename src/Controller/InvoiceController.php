@@ -63,7 +63,20 @@ class InvoiceController extends AbstractController
         return $this->render('invoice/index.html.twig', [
             'user_cooking_times' => $cookingTimes,
         ]);
+
     }
 
+    /**
+     * @Route("/admin", name="user_cooking_time_index_admin", methods={"GET"})
+     */
+    public function indexAdmin(UserCookingTimeRepository $userCookingTimeRepository): Response
+    {
 
+        // Récupérer les factures de l'utilisateur connecté
+        $cookingTimes = $userCookingTimeRepository->findAll();
+
+        return $this->render('invoice/admin_index.html.twig', [
+            'user_cooking_times' => $cookingTimes,
+        ]);
+    }
 }
