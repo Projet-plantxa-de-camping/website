@@ -133,6 +133,7 @@ class CookingTimeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($userCookingTime);
         $entityManager->flush();
+        $this->addFlash('success', 'Merci pour votre achat !');
 
         // Rediriger l'utilisateur vers la page d'accueil
         return $this->redirectToRoute('home');

@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+{% block title %}Statistiques Achats{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            <i class="icon-graph warning font-large-1 float-leftt"></i>
+            <div class="user-name">
+                <h3 class="mb-0 ml-3" style="margin-top: -32px;">Satistiques des Achats</h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="grey-bg container-fluid">
+                <section id="minimal-statistics">
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-sm-6 col-12">
+
+                        </div>
+                        <div style="width: 100%; background-color: #fff">
+                            <div id="chart"></div>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.28.2/dist/apexcharts.min.js"></script>
+                        <script>
+                            var options = {
+                                chart: {
+                                    type: 'bar',
+                                    height: 400
+                                },
+                                series: [{
+                                    name: 'Nombre d\'achats',
+                                    data: [{% for item in data %}{'x': '{{ item.name }}', 'y': {{ item.count }}},{% endfor %}]
+                                }],
+                                xaxis: {
+                                    type: 'category',
+                                    labels: {
+                                        rotate: -45,
+                                        offsetY: 0,
+                                        style: {
+                                            fontSize: '13px',
+                                            fontFamily: 'Helvetica, Arial, sans-serif'
+                                        }
+                                    }
+                                },
+                                yaxis: {
+                                    title: {
+                                        text: 'Nombre d\'achats'
+                                    }
+                                },
+                                tooltip: {
+                                    y: {
+                                        formatter: function (val) {
+                                            return val + " achats";
+                                        }
+                                    }
+                                },
+                                colors: [
+                                    function({dataPointIndex}) {
+
+                                    // colors
+                                        switch (dataPointIndex) {
+                                            case 0:
+                                                return '#008FFB'
+
+                                            case 1:
+                                                return '#00E396'
+
+                                            case 2:
+                                                return '#FEB019'
+
+                                            default:
+                                                return '#FF4560'
+                                        }
+
+                                    }
+                                ]
+                            };
+
+                            var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+                            chart.render();
+                        </script>
+                    </div>
+                </section>
+                <a class="btn btn-warning btn-md px-3"
+                   href="{{ path('account_index') }}">Retour</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

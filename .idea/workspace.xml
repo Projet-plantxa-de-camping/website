@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="537f3edd-0e33-4525-b160-1911f4742125" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/user/list.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/statistics/statistics.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/projet-plantxa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projet-plantxa.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InvoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CookingTimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CookingTimeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MesuresController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Invoice/ExampleInvoice.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/invoice/admin_index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/admin_index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +213,8 @@
       <workItem from="1678800773976" duration="1705000" />
       <workItem from="1679144100042" duration="3143000" />
       <workItem from="1679158123100" duration="14787000" />
-      <workItem from="1679262122692" duration="6681000" />
+      <workItem from="1679262122692" duration="6990000" />
+      <workItem from="1679500990387" duration="8211000" />
     </task>
     <servers />
   </component>
