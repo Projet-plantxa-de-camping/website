@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SatisticsController extends AbstractController
 {
     /**
-     * @Route("/statistics/products", name="statistics_products")
+     * @Route("/admin/statistics/products", name="statistics_products")
      */
     public function statisticsProducts(): Response
     {
@@ -47,6 +47,17 @@ class SatisticsController extends AbstractController
 
         return $this->render('statistics/statisticsProducts.html.twig', [
             'data' => $data,
+        ]);
+    }
+
+    /**
+     * @Route("admin/statistics/", name="statistics")
+     */
+    public function index(): Response
+    {
+
+        return $this->render('statistics/statisticsIndex.html.twig', [
+
         ]);
     }
 }
