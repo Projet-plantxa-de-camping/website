@@ -4,57 +4,57 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 {% endblock %}
 {% block body %}
-        <div class="card">
-            <div class="card-header">
-                <i class="icon-graph warning font-large-1 float-leftt"></i>
-                <div class="user-name">
-                    <h3 class="mb-0 ml-3" style="margin-top: -32px;">Satistiques</h3>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="grey-bg container-fluid">
-                    <section id="minimal-statistics">
-                        <div class="row">
-                            <div class="col-xl-3 col-sm-6 col-12">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <a href="{{ path('statistics_products') }}"
-                                               class="nav-link stretched-link"></a>
-                                            <div class="media d-flex">
-                                                <div class="align-self-center">
-                                                    <i class="icon-graph warning font-large-2 float-leftt"></i>
-                                                </div>
-                                                <div class="media-body text-right" style="margin-top: 10px;">
-                                                    <h5>Statistiques des Produits</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-sm-6 col-12">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <a href="{{ path('user_cooking_time_index_admin') }}"
-                                               class="nav-link stretched-link"></a>
-                                            <div class="media d-flex">
-                                                <div class="align-self-center">
-                                                    <i class="icon-graph warning font-large-2 float-leftt"></i>
-                                                </div>
-                                                <div class="media-body text-right" style="margin-top: 10px;">
-                                                    <h5>Statistiques des Plantxa</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                    </section>
-                    <a class="btn btn-warning btn-md px-3"
-                       href="{{ path('admin_show') }}">Retour</a>
-                </div>
+    <div class="card">
+        <div class="card-header">
+            <i class="icon-graph warning font-large-1 float-leftt"></i>
+            <div class="user-name">
+                <h3 class="mb-0 ml-3" style="margin-top: -32px;">Satistiques</h3>
             </div>
         </div>
+        <div class="card-body">
+            <div class="grey-bg container-fluid">
+                <section id="minimal-statistics">
+                    <div class="row">
+                        <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <a href="{{ path('statistics_products') }}"
+                                           class="nav-link stretched-link"></a>
+                                        <div class="media d-flex">
+                                            <div class="align-self-center">
+                                                <i class="icon-graph warning font-large-2 float-leftt"></i>
+                                            </div>
+                                            <div class="media-body text-right" style="margin-top: 10px;">
+                                                <h5>Statistiques des Produits</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <a href="{{ path('user_cooking_time_index_admin') }}"
+                                           class="nav-link stretched-link"></a>
+                                        <div class="media d-flex">
+                                            <div class="align-self-center">
+                                                <i class="icon-graph warning font-large-2 float-leftt"></i>
+                                            </div>
+                                            <div class="media-body text-right" style="margin-top: 10px;">
+                                                <h5>Statistiques des Plantxa</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </section>
+                <a class="btn btn-warning btn-md px-3"
+                   href="{{ path('admin_show') }}">Retour</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

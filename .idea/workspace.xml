@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="537f3edd-0e33-4525-b160-1911f4742125" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/statistics/statisticsIndex.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SatisticsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SatisticsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/userIndex.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/userIndex.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cooking_time/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cooking_time/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/statistics/statisticsIndex.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/statistics/statisticsIndex.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/statistics/statisticsProducts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/statistics/statisticsProducts.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +217,9 @@
       <workItem from="1679144100042" duration="3143000" />
       <workItem from="1679158123100" duration="14787000" />
       <workItem from="1679262122692" duration="6990000" />
-      <workItem from="1679500990387" duration="8846000" />
+      <workItem from="1679500990387" duration="10302000" />
+      <workItem from="1679602157369" duration="743000" />
+      <workItem from="1679859048090" duration="1209000" />
     </task>
     <servers />
   </component>

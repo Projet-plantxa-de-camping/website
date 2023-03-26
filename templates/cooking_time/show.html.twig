@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 {% endblock %}
 {% block body %}
-
     {% if not app.user %}
         <h1>Egun on</h1>
         <p>Veuillez vous connecter pour accéder au site.</p>
@@ -14,33 +13,34 @@
         <div class="card">
             <div class="card-header">
                 <i class="fa fa-shopping-cart danger font-large-1 float-left"></i>
-                    <div class="user-name">
+                <div class="user-name">
                     <h3 class="mb-0 ml-3">{{ cooking_time.name }}</h3>
-                    </div>
+                </div>
             </div>
-                <div class="card-body">
-                    <div class="grey-bg container-fluid">
-                        <section id="minimal-statistics">
-                            <div class="row">
-                                <div class="col-xl-3 col-sm-6 col-12">
-                                 <h5>Prix : {{ cooking_time.price }} € </h5>
-                                    {% if is_granted('ROLE_ADMIN') %}
+            <div class="card-body">
+                <div class="grey-bg container-fluid">
+                    <section id="minimal-statistics">
+                        <div class="row">
+                            <div class="col-xl-3 col-sm-6 col-12">
+                                <h5>Prix : {{ cooking_time.price }} € </h5>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a class="btn btn-danger btn-md px-1"
+                                       href="{{ path("cooking_time_index") }}">Retour</a>
+                                    <a class="btn btn-success btn-md px-3"
+                                       href="{{ path('cooking_time_edit', {'id': cooking_time.id}) }}">Edit</a>
+                                {% else %}
+                                    <form action="{{ path('add_cooking_time', { 'id': cooking_time.id }) }}"
+                                          method="POST">
                                         <a class="btn btn-danger btn-md px-1"
                                            href="{{ path("cooking_time_index") }}">Retour</a>
-                                        <a class="btn btn-success btn-md px-3" href="{{ path('cooking_time_edit', {'id': cooking_time.id}) }}">Edit</a>
-                                        {% else %}
-                                            <form action="{{ path('add_cooking_time', { 'id': cooking_time.id }) }}" method="POST">
-                                                <a class="btn btn-danger btn-md px-1"
-                                                   href="{{ path("cooking_time_index") }}">Retour</a>
-                                                <button type="submit"  class="btn btn-success btn-md px-3">Achat</button>
-                                            </form>
-
-                                    {% endif %}
-                                </div>
+                                        <button type="submit" class="btn btn-success btn-md px-3">Achat</button>
+                                    </form>
+                                {% endif %}
                             </div>
-                        </section>
-                    </div>
+                        </div>
+                    </section>
                 </div>
+            </div>
         </div>
     {% endif %}
 {% endblock %}
