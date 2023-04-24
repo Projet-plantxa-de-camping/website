@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/vendor/autoload.php';
+
 session_start();
 // Vérifiez que l'utilisateur est connecté
 if(isset($_SESSION['user_id'])){
@@ -41,8 +43,20 @@ if(isset($_SESSION['user_id'])){
     // Fermez la connexion à la base de données
     mysqli_close($conn);
 }
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+    <div id="timer">
+        <span class="hours">00</span>:
+        <span class="minutes">00</span>:
+        <span class="seconds">00</span>
+    </div>
 
-
+    <script>
 function updateTimer(deadline) {
     var time = deadline - new Date();
     return {
@@ -77,4 +91,4 @@ function startTimer(id, remainingTimeFromDB) {
         }
     }, 1000);
 }
-
+</script>

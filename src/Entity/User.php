@@ -55,7 +55,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="integer", options={"default" : 0})
      */
-    private int $remaining_time=0;
+    public int $remaining_time=0;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Role")

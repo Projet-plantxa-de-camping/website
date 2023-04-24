@@ -21,19 +21,31 @@ class SecurityController extends AbstractController
      */
     public function registration(Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder, UserRepository $userRepository): Response
     {
+        // Créer une nouvelle instance de l'utilisateur
         $user = new User();
+
+        // Créer un formulaire à partir de la classe RegistrationType et associer l'utilisateur créé précédemment
         $form = $this->createForm(RegistrationType::class, $user);
+
+        // Gérer la soumission du formulaire et la validation des données entrées
         $form->handleRequest($request);
+
+        // Si le formulaire est soumis et valide
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // Tenter de créer l'utilisateur avec le rôle "ROLE_USER" dans la base de données
             try {
                 $userRepository->createUserWithRoleUser($user, $encoder);
+                // Rediriger vers la page de connexion si la création d'utilisateur est réussie
                 return $this->redirectToRoute('security_login');
-            }catch (Exception $e){
+            } catch (Exception $e) {
+                // Afficher les erreurs éventuelles
                 var_dump($e);
             }
         }
-        return $this->render('security/registration.html.twig',
-            ['form' => $form->createView()]);
+
+        // Afficher la page d'inscription avec le formulaire créé
+        return $this->render('security/registration.html.twig', ['form' => $form->createView()]);
     }
 
     /**

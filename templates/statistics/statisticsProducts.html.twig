@@ -26,53 +26,55 @@
                         </div>
                         <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.28.2/dist/apexcharts.min.js"></script>
                         <script>
+                            // Définition des options du graphique
                             var options = {
                                 chart: {
-                                    type: 'bar',
-                                    height: 400
+                                    type: 'bar', // Type de graphique : barres
+                                    height: 400 // Hauteur du graphique
                                 },
                                 series: [{
-                                    name: 'Nombre d\'achats',
+                                    name: 'Nombre d\'achats', // Nom de la série de données
                                     data: [{% for item in data %}{
-                                        'x': '{{ item.name }}',
-                                        'y': {{ item.count }}},{% endfor %}]
+                                        'x': '{{ item.name }}', // Nom de l'élément
+                                        'y': {{ item.count }}}, // Nombre d'achats pour cet élément
+                                        {% endfor %}]
                                 }],
                                 xaxis: {
-                                    type: 'category',
+                                    type: 'category', // Type de données sur l'axe x : catégorie
                                     labels: {
-                                        rotate: -45,
-                                        offsetY: 0,
+                                        rotate: -45, // Rotation des étiquettes de 45 degrés vers la gauche
+                                        offsetY: 0, // Décalage vertical des étiquettes
                                         style: {
-                                            fontSize: '13px',
-                                            fontFamily: 'Helvetica, Arial, sans-serif'
+                                            fontSize: '13px', // Taille de police des étiquettes
+                                            fontFamily: 'Helvetica, Arial, sans-serif' // Police de caractère des étiquettes
                                         }
                                     }
                                 },
                                 yaxis: {
                                     title: {
-                                        text: 'Nombre d\'achats'
+                                        text: 'Nombre d\'achats' // Titre de l'axe y
                                     }
                                 },
                                 tooltip: {
                                     y: {
                                         formatter: function (val) {
-                                            return val + " achats";
+                                            return val + " achats"; // Formatage du texte du tooltip
                                         }
                                     }
                                 },
                                 colors: [
                                     function ({dataPointIndex}) {
 
-                                        // colors
+                                        // Fonction pour définir la couleur de chaque barre
                                         switch (dataPointIndex) {
                                             case 0:
-                                                return '#008FFB'
+                                                return '#008FFB' // Couleur de la première barre
 
                                             case 1:
-                                                return '#00E396'
+                                                return '#00E396' // Couleur de la deuxieme barre
 
                                             case 2:
-                                                return '#FEB019'
+                                                return '#FEB019' // Couleur de la troisieme barre
 
                                             default:
                                                 return '#FF4560'
@@ -82,8 +84,10 @@
                                 ]
                             };
 
+                            // Création du graphique avec ApexCharts
                             var chart = new ApexCharts(document.querySelector("#chart"), options);
 
+                            // Affichage du graphique
                             chart.render();
                         </script>
                     </div>
