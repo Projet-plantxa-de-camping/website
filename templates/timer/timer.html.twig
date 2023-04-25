@@ -53,17 +53,24 @@
                             }
 
                             function Timer(id, remainingTimeFromDB) {
-                                var timer = updateTimer(new Date(Date.now() + (remainingTimeFromDB * 60 * 1000)));
                                 var hoursSpan = document.querySelector("#" + id + " .hours");
                                 var minutesSpan = document.querySelector("#" + id + " .minutes");
                                 var secondsSpan = document.querySelector("#" + id + " .seconds");
-                                hoursSpan.innerHTML = ("0" + timer.hours).slice(-2);
-                                minutesSpan.innerHTML = ("0" + timer.minutes).slice(-2);
-                                secondsSpan.innerHTML = ("0" + timer.seconds).slice(-2);
+
+                                function update() {
+                                    var timer = updateTimer(new Date(Date.now() + (remainingTimeFromDB * 60 * 1000)));
+                                    hoursSpan.innerHTML = ("0" + timer.hours).slice(-2);
+                                    minutesSpan.innerHTML = ("0" + timer.minutes).slice(-2);
+                                    secondsSpan.innerHTML = ("0" + timer.seconds).slice(-2);
+                                }
+
+                                // appeler updateTimer toutes les secondes
+                                setInterval(update, 1000);
+                                update();
                             }
 
                             // appel de la fonction startTimer avec la durée restante de cuisson
-                            Timer("del-countdown",{{ app.user.remaining_time }});
+                            Timer("del-countdown", {{ app.user.remaining_time }});
                         </script>
                     </div>
                 </section>
