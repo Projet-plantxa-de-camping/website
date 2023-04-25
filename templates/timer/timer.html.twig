@@ -52,26 +52,18 @@
                                 }, 1000);
                             }
 
-                            function startTimer(id, remainingTimeFromDB) {
-                                var deadline = new Date(Date.now() + (remainingTimeFromDB * 60 * 1000));
-                                var timerInterval = setInterval(function() {
-                                    var timer = updateTimer(deadline);
-                                    var hoursSpan = document.querySelector("#" + id + " .hours");
-                                    var minutesSpan = document.querySelector("#" + id + " .minutes");
-                                    var secondsSpan = document.querySelector("#" + id + " .seconds");
-                                    hoursSpan.innerHTML = ("0" + timer.hours).slice(-2);
-                                    minutesSpan.innerHTML = ("0" + timer.minutes).slice(-2);
-                                    secondsSpan.innerHTML = ("0" + timer.seconds).slice(-2);
-
-                                    animateClock(secondsSpan);
-                                    if (timer.total <= 0) {
-                                        clearInterval(timerInterval);
-                                    }
-                                }, 1000);
+                            function Timer(id, remainingTimeFromDB) {
+                                var timer = updateTimer(new Date(Date.now() + (remainingTimeFromDB * 60 * 1000)));
+                                var hoursSpan = document.querySelector("#" + id + " .hours");
+                                var minutesSpan = document.querySelector("#" + id + " .minutes");
+                                var secondsSpan = document.querySelector("#" + id + " .seconds");
+                                hoursSpan.innerHTML = ("0" + timer.hours).slice(-2);
+                                minutesSpan.innerHTML = ("0" + timer.minutes).slice(-2);
+                                secondsSpan.innerHTML = ("0" + timer.seconds).slice(-2);
                             }
 
                             // appel de la fonction startTimer avec la durée restante de cuisson
-                            startTimer("del-countdown", {{ app.user.remaining_time }});
+                            Timer("del-countdown",{{ app.user.remaining_time }});
                         </script>
                     </div>
                 </section>
